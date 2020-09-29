@@ -1,0 +1,282 @@
+/*SETTINGS*/
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 10px;
+}
+
+body {
+  font-family: 'Source Sans Pro', sans-serif;
+  min-height: 100vh;
+  background: url('./img/whitespeckbg.jpg') center no-repeat;
+  background-size: cover;
+}
+
+#content {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+/*HEADER*/
+
+.container {
+  max-width: 120rem;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.header-nav {
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-bottom: 1px solid rgba(0, 0, 0, .07);
+}
+
+.nav-brand {
+  width: 17rem;
+}
+
+.menu-icons i {
+  font-size: 3.5rem;
+  color: rgba(0, 0, 0, .7);
+  cursor: pointer;
+}
+
+.tab-list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #f0f0f0;
+  height: 100vh;
+  width: 25rem;
+  position: fixed;
+  top: 0;
+  right: -26rem;
+  transition: all 650ms ease-in-out;
+}
+
+.tab-list.active{
+  right: 0;
+}
+
+.close {
+  position: absolute;
+  top: 1rem;
+  left: 1.5rem;
+}
+
+.tab-item {
+  margin: 3.5rem 0;
+}
+
+.tab-item a {
+  text-transform: uppercase;
+  font-size: 1.6rem;
+  color: rgba(0, 0, 0, .7);
+  font-weight: bold;
+}
+
+/*HERO*/
+
+
+.hero {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+[data-tab-content] {
+  display: none;
+}
+
+/*HOME*/
+#home.active {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#home.active p, span {
+  font-size: 1.5rem;
+  margin-bottom: .3rem;
+}
+
+.accent {
+  font-weight: 600;
+}
+
+.stamp {
+  margin-top: 3.5rem;
+  width: 10rem;
+  height: 10rem;
+}
+
+/*MENU*/
+#menu.active, #hours.active {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  text-align: center;
+  font-size: 1.7rem;
+  height: 100%;
+}
+
+.menu-type-title {
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+
+.plate {
+  margin: 2rem 0;
+}
+
+.plate-title {
+  font-size: 1.5rem;
+}
+
+#hours.active h3 {
+  text-transform: uppercase;
+  margin: 2rem 0;
+}
+
+.contact-info > p, .hours-info > p {
+  margin: 2rem 0;
+}
+
+/*FOOTER*/
+
+.footer-nav {
+  padding: 1.5rem 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid rgba(0, 0, 0, .15);
+}
+
+.reservation-btn {
+  color: white;
+  background-color: #095079;
+  font-size: 1.5rem;
+  padding: .7rem;
+  border-radius: .3rem;
+  font-family: 'Source Sans Pro', sans-serif;
+  border: none;
+  outline: none;
+  cursor: pointer;
+}
+
+.footer-nav ul{
+  display: flex;
+}
+
+.social-link {
+  padding: .8rem;
+}
+
+.social-link img {
+  width: 3em;
+}
+
+
+/*queries*/
+@media screen and (min-width: 700px) {
+  .header-nav, .footer-nav {
+    justify-content: space-around;
+  }
+
+  .nav-brand {
+    width: 23rem;
+  }
+
+  .tab-list {
+    width: initial;
+    height: initial;
+    background-color: transparent;
+    position: initial;
+    top: initial;
+    right: initial;
+    flex-direction: row;
+    transition: initial;
+  }
+
+  .menu-icons{
+    display: none;
+  }
+
+  .tab-item {
+    margin: 1.5rem;
+  }
+
+  .tab-link{
+    position: relative;
+  }
+
+  .tab-link::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -0.4rem;
+    width: 100%;
+    height: 2px;
+    background-color: rgba(0, 0, 0, .2);
+    transform: scale(0);
+    transform-origin: left;
+    transition: transform 350ms;
+  }
+
+  .current::before {
+    transform: scaleX(1);
+  }
+
+  .tab-link:hover::before {
+    transform: scaleX(1);
+  }
+
+}
+
+
+@media screen and (min-width: 900px) {
+  .stamp {
+    width: 13rem;
+    height: 13rem;
+  }
+
+  .nav-brand {
+    width: 28rem;
+  }
+
+  #menu.active, #hours.active {
+    display: grid;
+    height: auto;
+    grid-template-columns: 1fr 1fr;
+    font-size: 2rem;
+  }
+
+  .plate {
+    margin: 4rem 0;
+  }
+}
+
+
