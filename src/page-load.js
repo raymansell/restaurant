@@ -48,17 +48,17 @@ function headerSetup() {
   const homeTabLink = tabLink.cloneNode(true);
   homeTabLink.className += ' current';
   homeTabLink.setAttribute('href', '#');
-  homeTabLink.setAttribute('data-tab-target', '#home');
+  homeTabLink.setAttribute('data-tab-target', 'home');
   homeTabLink.textContent = 'Home';
 
   const menuTabLink = tabLink.cloneNode(true);
   menuTabLink.setAttribute('href', '#');
-  menuTabLink.setAttribute('data-tab-target', '#menu');
+  menuTabLink.setAttribute('data-tab-target', 'menu');
   menuTabLink.textContent = "Menu";
 
   const hoursTabLink = tabLink.cloneNode(true);
   hoursTabLink.setAttribute('href', '#');
-  hoursTabLink.setAttribute('data-tab-target', '#hours');
+  hoursTabLink.setAttribute('data-tab-target', 'hours');
   hoursTabLink.textContent = "Hours";
 
   content.appendChild(header);
@@ -86,7 +86,6 @@ function headerSetup() {
 function heroSetup() {
   const heroContainer = document.createElement('section');
   heroContainer.className = 'hero container';
-  heroContainer.textContent = "hola";
   content.appendChild(heroContainer);
 }
 
@@ -132,4 +131,4 @@ export {
   headerSetup,
   heroSetup,
   footerSetup,
-}
+};
